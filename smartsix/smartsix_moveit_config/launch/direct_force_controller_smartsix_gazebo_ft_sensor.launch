@@ -1,0 +1,10 @@
+<launch>
+  <!-- load configuration -->
+  <rosparam command="load" file="$(find smartsix_moveit_config)/config/direct_force_controller_smartsix_sim.yaml" />
+  <rosparam command="load" file="$(find smartsix_moveit_config)/config/smartsix_interaction_control_sim_parameters.yaml" />
+
+  <param name="force_torque_sensor_type" value="ForceTorqueSensorGazebo"/>
+
+  <node name="direct_force_controller_spawner" pkg="controller_manager" type="spawner" output="screen" ns="smartsix" args="direct_force_controller" respawn="false"/>
+
+</launch>

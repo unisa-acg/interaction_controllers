@@ -1,0 +1,9 @@
+robot_parameters:
+  joint_model_group:
+    smartsix
+  base_frame_name:
+    base_link
+  force_torque_sensor_mounting_frame:
+    link6
+  force_torque_sensor_frame_orientation:
+    [0, 0, 0]

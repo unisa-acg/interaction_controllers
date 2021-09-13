@@ -1,0 +1,7 @@
+<launch>
+  <!--load configuration-->
+  <param name="force_torque_sensor_type" value="ForceTorqueSensorMock" />
+  
+  <node name="demo_mock_force_torque_sensor" pkg="force_torque_sensor" type="demo_force_torque_sensor_read" respawn="false" output="screen" />
+
+</launch>

@@ -1,0 +1,18 @@
+<launch>
+
+  <param name="/action_topic" value="/admittance_controller"/>
+
+  <!-- '.traj' file to load containing the workspace trajectory -->
+  <arg name="filename"/>
+
+  <!--
+    The fraction_feedback_messages_to_save is used to define the portion of feedback messages to be saved.
+    If its value is N, 1/N of total number of messages will be output to bagfile.
+   -->
+  <param name="fraction_feedback_messages_to_save" type="int" value="90"/>
+
+  <node name="follow_workspace_trajectory_action_client" pkg="follow_workspace_trajectory_action_client" type="follow_workspace_trajectory_action_client" respawn="false" output="screen">
+    <param name="filename" type="str" value="$(arg filename)"/>
+  </node>
+
+</launch>

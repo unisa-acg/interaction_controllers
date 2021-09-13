@@ -1,0 +1,9 @@
+robot_parameters:
+  joint_model_group:
+    manipulator
+  base_frame_name:
+    base
+  force_torque_sensor_mounting_frame:
+    wrist_3_link
+  force_torque_sensor_frame_orientation:
+    [0, 0, 0]

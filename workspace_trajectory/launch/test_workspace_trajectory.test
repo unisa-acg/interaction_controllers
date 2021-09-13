@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="debugger_attached" default="false"/>
+
+  <!-- Tests: test-name and (node) name are arbitrary properties -->
+  <test name="workspace_trajectory_test_node" 
+        pkg="workspace_trajectory" 
+        test-name='WorkspaceTrajectory' 
+        type="workspace_trajectory-test"
+        time-limit="3600.0"
+        unless="$(arg debugger_attached)"/>
+
+</launch>

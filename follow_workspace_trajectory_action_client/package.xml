@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>follow_workspace_trajectory_action_client</name>
+  <version>0.0.0</version>
+  <description>The follow_workspace_trajectory_action_client package</description>
+
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+
+  <license>BSD</license>
+
+  <author email="g.longobardi26@studenti.unisa.it">Giovanni Longobardi</author> 
+
+  <depend>workspace_trajectory</depend>
+  <depend>acg_control_msg</depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>rosbag</build_depend>
+
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>roslib</build_export_depend>
+  <build_export_depend>actionlib</build_export_depend>
+  <build_export_depend>rosbag</build_export_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>roslib</exec_depend>
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+
+  <export>
+
+  </export>
+
+</package>

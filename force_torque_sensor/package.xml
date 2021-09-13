@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>force_torque_sensor</name>
+  <version>0.0.0</version>
+  <description>The force_torque_sensor package</description>
+
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+
+  <license>BSD</license>
+
+  <author email="s.simeone5@studenti.unisa.it">Sabatino Simeone</author>
+  <author email="g.longobardi26@studenti.unisa.it">Giovanni Longobardi</author>
+  <author email="v.petrone6@studenti.unisa.it">Vincenzo Petrone</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>pluginlib</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>pluginlib</exec_depend>
+  <exec_depend>ur_gazebo</exec_depend>
+
+  <export>
+    <force_torque_sensor plugin="${prefix}/mock_force_torque_sensor.xml" />
+    <force_torque_sensor plugin="${prefix}/gazebo_force_torque_sensor.xml" />
+  </export>
+
+</package>

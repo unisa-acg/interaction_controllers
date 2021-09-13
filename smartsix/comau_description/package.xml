@@ -1,0 +1,17 @@
+<package format="2">
+
+  <name>comau_description</name>
+  <version>1.0.0</version>
+
+  <description>The comau_description package</description>
+
+  <author email="g.cirillo26@studenti.unisa.it">Giuseppe Cirillo</author>
+  <maintainer email="eferrentino@unisa.it"> Enrico Ferrentino</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>force_torque_sensor</exec_depend>
+
+</package>

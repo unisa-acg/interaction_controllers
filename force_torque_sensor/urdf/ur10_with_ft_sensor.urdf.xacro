@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!-- This file follows the stucture of the ur.xacro file in ur_gazebo package 
+     but adding the force/torque sensor -->
+
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur10_robot">
+
+  <!-- Gazebo model-->
+  <xacro:include filename="$(find ur_gazebo)/urdf/ur_macro.xacro"/>
+
+  <!-- Declare arguments -->
+  <xacro:arg name="joint_limit_params" default=""/>
+  <xacro:arg name="physical_params" default=""/>
+  <xacro:arg name="kinematics_params" default=""/>
+  <xacro:arg name="visual_params" default=""/>
+
+  <!-- Sensor -->
+  <xacro:include filename="$(find force_torque_sensor)/urdf/gazebo_force_torque_sensor.xacro" />
+
+  <!-- Instantiate the Gazebo robot and pass it all the required arguments. -->
+  <xacro:ur_robot_gazebo
+    prefix=""
+    joint_limits_parameters_file="$(arg joint_limit_params)"
+    kinematics_parameters_file="$(arg kinematics_params)"
+    physical_parameters_file="$(arg physical_params)"
+    visual_parameters_file="$(arg visual_params)"
+    transmission_hw_interface="$(arg transmission_hw_interface)"
+  />
+
+  <xacro:include filename="$(find force_torque_sensor)/urdf/ur10_ft_sensor_tool.xacro"/>
+
+  <xacro:ft_sensor_tool connected_to="tool0" rpy="0 0 0" xyz="0 0 0"/>
+
+  <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+</robot>

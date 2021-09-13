@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>direct_force_controller</name>
+  <version>0.0.0</version>
+  <description>The direct_force_controller package</description>
+
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+
+  <license>BSD</license>
+
+  <author email="s.simeone5@studenti.unisa.it">Sabatino Simeone</author>
+  <author email="g.longobardi26@studenti.unisa.it">Giovanni Longobardi</author>
+
+  <depend>force_torque_sensor</depend>
+  <depend>acg_control_msg</depend>
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning_interface</depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>controller_interface</build_depend>
+  <build_depend>hardware_interface</build_depend>
+  <build_depend>control_toolbox</build_depend>
+  <build_depend>pluginlib</build_depend>
+
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>actionlib</build_export_depend>
+  <build_export_depend>actionlib_msgs</build_export_depend>
+  <build_export_depend>controller_interface</build_export_depend>
+  <build_export_depend>hardware_interface</build_export_depend>
+  <build_export_depend>control_toolbox</build_export_depend>
+  <build_export_depend>pluginlib</build_export_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
+  <exec_depend>controller_interface</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>control_toolbox</exec_depend>
+  <exec_depend>pluginlib</exec_depend>
+  <exec_depend>ur10_acg_configuration</exec_depend>
+
+  <export>
+    <controller_interface plugin="${prefix}/direct_force_controller_plugin.xml"/>
+  </export>
+</package>

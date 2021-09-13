@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+
+  <world name="default">
+
+    <gui>
+      <camera name="user_default">
+        <pose>-0.1984 2.4436 1.041 0 -0.064 -1.6107</pose>
+      </camera>
+    </gui>
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- A rigid body -->
+    <model name="box">
+      <static>true</static>
+      <pose>-0.4455 0.779 0.724389 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0 0.3 0.01</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0 0.3 0.01</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    </world>
+
+</sdf>

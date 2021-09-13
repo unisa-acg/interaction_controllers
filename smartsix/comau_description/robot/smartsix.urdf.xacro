@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="smartsix" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  
+  <xacro:include filename="$(find comau_description)/robot/smartsix.xacro" />
+  <xacro:include filename="$(find comau_description)/robot/smartsix.gazebo.xacro" />
+
+</robot>

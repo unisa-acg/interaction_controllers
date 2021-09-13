@@ -1,0 +1,5 @@
+<library path="lib/libmock_force_torque_sensor">
+  <class type="force_torque_sensor::ForceTorqueSensorMock" base_class_type="force_torque_sensor::ForceTorqueSensor">
+    <description>This is a mock force torque sensor plugin.</description>
+  </class>
+</library>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- IP address by which the robot can be reached -->
+  <arg name="robot_ip" default="192.168.1.6"/>
+
+  <!-- Kinematics config file used for calibration correction -->
+  <arg name="kinematics_config" default="$(find ur10_acg_configuration)/config/ur10_acg_calibration.yaml"/>
+
+  <!-- Robot description parameters -->
+  <arg name="robot_description" default="robot_description"/>
+
+  <param name="$(arg robot_description)_semantic" textfile="$(find ur10_moveit_config)/config/ur10.srdf" />
+
+  <group ns="$(arg robot_description)_planning">
+    <rosparam command="load" file="$(find ur10_moveit_config)/config/joint_limits.yaml"/>
+  </group>
+
+  <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+  <group ns="$(arg robot_description)_kinematics">
+    <rosparam command="load" file="$(find ur10_moveit_config)/config/kinematics.yaml"/>
+  </group>
+
+  <!-- Load hardware interface specifying controllers to be spawned and stopped-->
+  <include file="$(find ur_robot_driver)/launch/ur10_bringup.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)"/>
+    <arg name="kinematics_config" default="$(arg kinematics_config)"/>
+    <arg name="controllers" value="joint_state_controller pos_joint_traj_controller"/>
+    <arg name="stopped_controllers" value="speed_scaling_state_controller 
+                                           scaled_pos_joint_traj_controller 
+                                           force_torque_sensor_controller 
+                                           joint_group_vel_controller"/>
+  </include>
+
+</launch>

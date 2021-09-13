@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="smartsix" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  
+  <xacro:include filename="$(find comau_description)/robot/smartsix.urdf.xacro" />
+
+  <xacro:include filename="$(find force_torque_sensor)/urdf/gazebo_force_torque_sensor.xacro" />
+
+  <xacro:include filename="$(find comau_description)/robot/ft_sensor_tool.xacro"/>
+
+  <xacro:ft_sensor_tool connected_to="link7" rpy="0 0 0" xyz="0 0 0"/>
+
+</robot>

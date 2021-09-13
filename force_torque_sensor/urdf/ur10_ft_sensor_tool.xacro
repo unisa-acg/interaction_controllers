@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ft_sensor_tool">
+
+    <xacro:macro name="ft_sensor_tool" params="connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
+        <xacro:unless value="${not connected_to}">
+            <joint name="ft_sensor_tool_joint" type="fixed">
+                <origin rpy="${rpy}" xyz="${xyz}"/>
+                <parent link="${connected_to}"/>
+                <child link="ft_sensor_tool_link"/>
+            </joint>
+        </xacro:unless>
+
+        <link name="ft_sensor_tool_link">
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="2" />
+                <inertia ixx="0.0432" ixy="0" ixz="0"
+                        iyy="0.0432" iyz="0" 
+                        izz="0.08" />
+            </inertial>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <geometry>
+                    <mesh filename="package://force_torque_sensor/urdf/meshes/ur10_ft_sensor_tool.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <geometry>
+                    <mesh filename="package://force_torque_sensor/urdf/meshes/ur10_ft_sensor_tool.stl" />
+                </geometry>
+            </collision>
+        </link>
+
+        <gazebo reference="ft_sensor_tool_link">
+            <selfCollide>true</selfCollide>
+            <material>Gazebo/DarkGrey</material>
+        </gazebo>
+
+    </xacro:macro>
+</robot>

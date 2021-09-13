@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<!-- The auto-generated URDF has been modified to be compatible with the last versions of MoveIt! and Gazebo -->
+
+<robot  name="smartsix"  xmlns:xacro="http://www.ros.org/wiki/xacro">         
+    
+    <!-- ******************** Used for fixing robot to Gazebo 'base_link' ********************-->
+    <link name="world"/>
+
+    <joint name="virtual_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    
+    
+    <!--************************************************BASE_LINK********************************************-->
+    <link name="base_link">
+        <!--link properties-->
+        <inertial>
+            <origin xyz="-0.1006 0.0026243 0.085163" rpy="0 0 0" />
+            <mass value="125.01" />
+            <inertia ixx="0.81984" ixy="0.081396" ixz="0.085894"
+                     iyy="2.5662" iyz="-0.0069399" 
+                     izz="2.8495" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/base_link.dae" />
+            </geometry>
+            <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/base_link.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+
+
+    <!--************************************************LINK 1********************************************-->
+    <link name="link1">
+        <!--Link properties-->
+        <inertial>
+            <origin xyz="0.032419 0.017781 0.32549" rpy="0 0 0" />
+            <mass value="151.44" />
+            <inertia ixx="1.6013" ixy="-0.2321" ixz="-0.2639"
+                     iyy="1.8623" iyz="0.16124"
+                     izz="2.2996" />
+        </inertial>
+        
+        <visual>
+            <origin xyz="0 0 0" rpy="-3.14159 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/link1.dae" />
+            </geometry>
+            <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="-3.14159 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/link1.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+
+    <joint name="joint1" type="revolute">
+        <!--Joint properties-->
+        <origin xyz="0 0 0" rpy="-3.14159 0 0" />
+        <parent link="base_link" />
+        <child link="link1" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.967" upper="2.967" effort="1200" velocity="2.443" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+
+     <!--************************************************LINK 2********************************************-->
+    <link name="link2">
+        <!--Link properties-->
+        <inertial>
+            <origin xyz="-0.0077653 -0.18316 -0.072606" rpy="0 0 0" />
+            <mass value="49.718" />
+            <inertia ixx="1.5405" ixy="-0.0099977" ixz="-0.01091"
+                     iyy="0.25628" iyz="-0.0071736" 
+                     izz="1.4883" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/link2.dae" />
+            </geometry>
+            <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/link2.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+
+    <joint name="joint2" type="revolute">
+        <origin xyz="0.15 0 -0.45" rpy="1.5708 0 0" />
+        <parent link="link1" />
+        <child link="link2" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.4835" upper="2.7052" effort="1200" velocity="2.792" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+
+    <!--************************************************LINK 3********************************************-->
+    <link name="link3">
+        <inertial>
+            <origin xyz="0.0943 -0.028471 -0.0076351" rpy="0 0 0" />
+            <mass value="82.663" />
+            <inertia ixx="0.7046" ixy="0.075791" ixz="0.07304"
+                     iyy="0.80675" iyz="0.037263" 
+                     izz="0.59063" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="3.1415 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/link3.dae" />
+            </geometry>
+             <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="3.1415 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/link3.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+
+    <joint name="joint3" type="revolute">
+        <origin xyz="0 -0.59 0" rpy="3.1415 0 3.1415" />-->
+        <parent link="link2" />
+        <child link="link3" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1415" upper="3.1415" effort="1200" velocity="2.967" /> <!-- da capire -->
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+
+     <!--************************************************LINK 4******************************************** -->
+    <link name="link4">
+        <inertial>
+            <origin xyz="-2.2301E-05 0.0024419 -0.28366" rpy="0 0 0" />
+            <mass value="50.29" />
+            <inertia ixx="1.1939" ixy="3.7291E-05" ixz="0.00017106"
+                     iyy="1.1587" iyz="-0.0046627" 
+                     izz="0.10717" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -0.64707" rpy="0 3.1415 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/link4.dae" />
+            </geometry>
+            <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.64707" rpy="0 3.1415 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/link4.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+
+    <joint name="joint4" type="revolute">
+        <origin xyz="0.13 0 0" rpy="-1.5708 0 0" /> 
+        <parent link="link3" /> 
+        <child link="link4" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.6651" upper="3.6651" effort="11.7" velocity="10.47" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+
+    <!--************************************************LINK 5********************************************-->
+    <link name="link5">
+        <inertial>
+            <origin xyz="-7.297E-05 0.020653 0.00074202" rpy="0 0 0" />
+            <mass value="3.6523" />
+            <inertia ixx="0.0047313" ixy="-3.1659E-06" ixz="-4.152E-07"
+                     iyy="0.0027359" iyz="6.4593E-05" 
+                     izz="0.0042881" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/link5.dae" />
+            </geometry>
+            <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/link5.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+    
+    <joint name="joint5" type="revolute">
+        <origin xyz="0.0 0.0 -0.64707" rpy="-1.5708 0 0" />
+        <origin xyz="0 0 0" rpy="1.5708 0 0" />
+        <parent link="link4" />
+        <child link="link5" />
+        <axis xyz="0 0 1" />
+        <limit lower="-2.2689" upper="2.2689" effort="11.7" velocity="6.545" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+
+     <!--************************************************LINK 6********************************************-->
+    <link name="link6">
+        <inertial>
+            <origin xyz="-0.00066992 3.0689E-05 -0.0074649" rpy="0 0 0" />
+            <mass value="0.26849" />
+            <inertia ixx="6.9791E-05" ixy="-5.4006E-09" ixz="1.6317E-07"
+                     iyy="6.3335E-05" iyz="3.4815E-08" 
+                     izz="0.00012406" />
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/visual/link6.dae" />
+            </geometry>
+            <material name=""/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://comau_description/meshes/collision/link6.stl" />
+            </geometry>
+        </collision>
+
+    </link>
+
+    <joint name="joint6" type="revolute">
+        <origin xyz="0 0.095 0" rpy="-1.5708 3.1415 0" />
+        <parent link="link5" />
+        <child link="link6" />
+        <axis xyz="0 0 1" />
+        <limit lower="-47.1238" upper="47.1238" effort="5.8" velocity="9.6" />
+        <dynamics damping="0" friction="0.0" />
+    </joint>
+
+    <!--************************************************FIXED LINK 7********************************************-->
+
+    <link name="link7"/>
+
+    <joint name="joint7" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <parent link="link6" />
+        <child link="link7" />
+    </joint>
+
+</robot>

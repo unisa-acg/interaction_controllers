@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- load configuration -->
+  <rosparam command="load" file="$(find ur10_acg_configuration)/config/admittance_controller_ur10_sim.yaml" />
+  <rosparam command="load" file="$(find ur10_acg_configuration)/config/ur10_interaction_control_sim_parameters.yaml" />
+
+  <param name="force_torque_sensor_type" value="ForceTorqueSensorGazebo" />
+
+  <node name="admittance_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="admittance_controller" respawn="false"/>
+
+</launch>

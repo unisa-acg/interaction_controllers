@@ -1,0 +1,10 @@
+smartsix: 
+  admittance_controller:
+    type: admittance_controller/AdmittanceController
+    ik_timeout: 0.1
+    ik_tolerance: 6.28319
+    loop_frequency: 1000
+    sp_tolerance: 0.1
+    mass_matrix: [1.0, 1.0, 0.001]
+    damping_matrix: [1300.0, 1300.0, 9000]
+    stiffness_matrix: [1500.0, 1500.0, 300.0]

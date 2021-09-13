@@ -1,0 +1,12 @@
+direct_force_controller:
+  type: direct_force_controller/DirectForceController
+  ik_timeout: 0.1
+  ik_tolerance: 6.28319
+  loop_frequency: 1000
+  sp_tolerance: 0.01
+  pid_p: 0.0000000025
+  pid_i: 0.00006
+  pid_d: 0.0
+  force_control_along_x: no
+  force_control_along_y: no
+  force_control_along_z: yes

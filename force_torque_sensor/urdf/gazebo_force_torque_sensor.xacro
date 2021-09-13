@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+  
+  <gazebo reference="$(arg ft_sensed_joint)">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <!-- The ft_sensor plugin -->
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>100.0</updateRate>
+      <topicName>gazebo_ft_sensor</topicName>
+      <jointName>$(arg ft_sensed_joint)</jointName>
+    </plugin>
+  </gazebo>
+
+</robot>

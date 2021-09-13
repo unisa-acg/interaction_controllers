@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<robot>
+    
+    <!-- The transmission tag is used to link actuators to joints -->    
+    <transmission name="trans_joint1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint1">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint1_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint2">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint2_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint3">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint3_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint4">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint4_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint5">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint5">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint5_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint6">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint6">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint6_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <gazebo>
+        <!-- add gazebo_ros_control plugin -->
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/smartsix</robotNamespace>
+        </plugin>
+    </gazebo>
+    
+    <!-- the gazebo tag sets the meshes' color and enables self-collisions -->
+    <gazebo reference="base_link">
+        <selfCollide>true</selfCollide>
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="link1">
+        <selfCollide>true</selfCollide>
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="link2">
+        <selfCollide>true</selfCollide>
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="link3">
+        <selfCollide>true</selfCollide>    
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="link4">
+        <selfCollide>true</selfCollide>
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="link5">
+       <selfCollide>true</selfCollide>
+        <material>Gazebo/Grey</material>
+    </gazebo>
+    <gazebo reference="link6">
+       <selfCollide>true</selfCollide>
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+</robot>

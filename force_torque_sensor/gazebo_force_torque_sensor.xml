@@ -1,0 +1,5 @@
+<library path="lib/libgazebo_force_torque_sensor">
+  <class type="force_torque_sensor::ForceTorqueSensorGazebo" base_class_type="force_torque_sensor::ForceTorqueSensor">
+    <description>This is a Gazebo force torque sensor plugin.</description>
+  </class>
+</library>

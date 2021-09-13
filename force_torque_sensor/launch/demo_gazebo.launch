@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- starts Gazebo -->
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="false" doc="Starts gazebo gui" />
+  <arg name="robot_description" default="robot_description"/>
+  <arg name="joint_limit_params" default="$(find ur_description)/config/ur10/joint_limits.yaml" doc="YAML file containing the joint limit values"/>
+  <arg name="kinematics_params" default="$(find ur_description)/config/ur10/default_kinematics.yaml" doc="YAML file containing the robot's kinematic parameters. These will be different for each robot as they contain the robot's calibration."/>
+  <arg name="physical_params" default="$(find ur_description)/config/ur10/physical_parameters.yaml" doc="YAML file containing the phycical parameters of the robots"/>
+  <arg name="visual_params" default="$(find ur_description)/config/ur10/visual_parameters.yaml" doc="YAML file containing the visual model of the robots"/>
+  <arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface" />
+  <arg name="ft_sensed_joint" default="wrist_3_joint" />
+
+  <!-- startup simulated world without GUI -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="worlds/empty.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include> 
+
+  <!-- send robot urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find force_torque_sensor)/urdf/ur10_with_ft_sensor.urdf.xacro' 
+    joint_limit_params:=$(arg joint_limit_params)
+    kinematics_params:=$(arg kinematics_params)
+    physical_params:=$(arg physical_params)
+    visual_params:=$(arg visual_params)
+    transmission_hw_interface:=$(arg transmission_hw_interface) 
+    ft_sensed_joint:=$(arg ft_sensed_joint)" />
+
+  <!-- push robot_description to factory and spawn robot in Gazebo -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -z 0.1" respawn="false" output="screen"/>
+
+</launch>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>acg_control_msg</name>
+  <version>0.0.0</version>
+  <description>The acg_control_msg package</description>
+
+  <maintainer email="eferrentino@unisa.it">Enrico Ferrentino</maintainer>
+
+  <license>BSD</license>
+
+  <author email="g.longobardi26@studenti.unisa.it">Giovanni Longobardi</author>
+
+  <depend>workspace_trajectory_msgs</depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>actionlib_msgs</build_depend>
+
+  <build_export_depend>actionlib_msgs</build_export_depend>
+
+  <exec_depend>actionlib_msgs</exec_depend>
+  <exec_depend>message_generation</exec_depend>
+
+  <export>
+
+  </export>
+
+</package>

@@ -1,0 +1,7 @@
+<library path="lib/libdirect_force_controller">
+  <class name="direct_force_controller/DirectForceController" type="direct_force_controller::DirectForceController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      This package implements a direct force controller based on ros_control.
+    </description>
+  </class>
+</library>
