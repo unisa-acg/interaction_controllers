@@ -1,6 +1,10 @@
 # Interaction controllers
 
-This repository is a collection of ROS packages needed to perform interaction control on both simulated and real robots. It is structured as follows:
+This repository is a collection of ROS packages needed to perform interaction control on both simulated and real robots. Please cite:
+
+> Storiale, F.; Ferrentino, E.; Chiacchio, P. Robot-Agnostic Interaction Controllers Based on ROS. Appl. Sci. 2022, 12, 3949. https://doi.org/10.3390/app12083949
+
+The repository is structured as follows:
 
 * the `ros_control_controllers` package contains the implementation of the direct force controller and admittance controller;
 * the `force_torque_sensor` package contains the library to handle the communication with real and simulated force/torque sensors;
